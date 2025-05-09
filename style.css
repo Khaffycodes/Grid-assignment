@@ -9,6 +9,7 @@ body {
 .grid-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  max-width: 1200px;
   gap: 10px;
 }
 
@@ -17,6 +18,28 @@ img {
   height: 200px;
 }
 
-.image-tile.active {
+.active {
   outline: 3px solid #007bff;
+}
+
+/* Media query */
+
+@media (max-width: 900px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  img {
+    width: 400px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+  img {
+    margin: auto;
+  }
 }
